@@ -1,7 +1,11 @@
 from flask import Flask
 import mysql.connector
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 db = mysql.connector.connect(
     host = "bigdata-database.mysql.database.azure.com",

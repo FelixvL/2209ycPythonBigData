@@ -22,7 +22,9 @@
         // Here we set a new item in local storage
         // A local storage item is an key/value pair that is saved in the user's browser
         // The key is set to 'code' and the value is data (which is the id, the result of calling intro())
-        localStorage.setItem("code", data)
+        console.log("test" + data);
+        localStorage.setItem("code", data);
+        paginaquiz1();
       })
     }
     function paginaquiz1(){
@@ -60,7 +62,7 @@
               <br><br><br>
                     <input class="labelset" type="text" placeholder="Name" value="" id="vnaam"><br><br>
                     <input class="labelset" type="number" required maxlength="3" placeholder="Age" id="age"><br><br>
-                    <input type="button" onclick="vnaam(); paginaquiz1()" class="startbutton startbutton:hover" value="Start">
+                    <input type="button" onclick="vnaam()" class="startbutton startbutton:hover" value="Start">
             </div>
 
 
