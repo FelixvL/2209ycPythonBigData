@@ -43,7 +43,7 @@ def intro(vnaam,age):
     id = mycursor.fetchone()[0]
     print(id, vnaam, age, "added")
     # let this function return the id, so when this function is called you will get the id back
-    return id
+    return str(id)
 
 @app.route("/quiz/<speed>/<id>")
 def quiz(speed, id):
