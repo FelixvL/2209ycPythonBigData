@@ -7,6 +7,7 @@
   </head>
   <script>
     function set_question() {
+      id = getLocalStorage("question")
       fetch("http://127.0.0.1:5000/quiz/"+id)
       .then(res => res.text()).then(data => question = data);
       split_question = question.split(';');
