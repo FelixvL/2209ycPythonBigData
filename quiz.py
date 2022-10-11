@@ -1,15 +1,44 @@
 import pandas as pd
 
-def interpret_results():
+# dit moet in app.py uiteindelijk
 
-    # is half pseudocode om idee uit te werken, runt niet.
-    newlist = []
-    if user.endurance >= 6.5:
-        newlist.append(sports[sports.endurance >= 6.5])
-    elif user.endurance >= 4:
-        newlist.append(sports[sports.endurance >= 4])
-    else:
-        newlist.append(sports[sports.endurance < 4])
+questions = {
+    '1': {'skill': 'endurance',
+          'question': 'Your friends asks you if you\'d like to sign up for a charity run with them. What do you say?',
+          'a': 'Absolutely!', 
+          'b': 'If it\'s no more than 5 km, you\'ll consider it.',
+          'c': 'You\'ll cheer them on from the sidelines.'},
+    '2': {'skill': 'flexibility',
+          'question': 'If you were to take a yoga class, what would it look like?',
+          'a': 'Master', 
+          'b': 'Doing alright',
+          'c': 'Nope'}
+}
+
+questions_string = {
+    1: "endurance;Your friends asks you if you\'d like to sign up for a charity run with them. What do you say?;\
+        Absolutely!;If it\'s no more than 5 km, you\'ll consider it.;You\'ll cheer them on from the sidelines."
+}
+
+print(questions.endurance.question)
+print(questions.endurance.a)
+
+
+@app.route("quiz/<id>")
+def quiz(id):
+    return questions_string[id]
+
+
+# def interpret_results():
+
+#     # is half pseudocode om idee uit te werken, runt niet.
+#     newlist = []
+#     if user.endurance >= 6.5:
+#         newlist.append(sports[sports.endurance >= 6.5])
+#     elif user.endurance >= 4:
+#         newlist.append(sports[sports.endurance >= 4])
+#     else:
+#         newlist.append(sports[sports.endurance < 4])
 
     #calculate frequency van newlist
 
@@ -17,7 +46,7 @@ def interpret_results():
 # Your friends asks you if you'd like to sign up for a charity run with them. What do you say?
 # a) Absolutely! (6,5+)
 # b) If it's no more than 5 km, you'll consider it. (4-6,5)
-# b) You'll cheer them on from the sidelines. (4-)
+# c) You'll cheer them on from the sidelines. (4-)
 
 # Strength 
 
