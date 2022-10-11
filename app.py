@@ -1,7 +1,11 @@
 from flask import Flask
 import mysql.connector
+from flask_cors import CORS, cross_origin
+
 
 app = Flask(__name__)
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 db = mysql.connector.connect(
     host = "bigdata-database.mysql.database.azure.com",
@@ -39,7 +43,7 @@ def intro(vnaam,age):
     id = mycursor.fetchone()[0]
     print(id, vnaam, age, "added")
     # let this function return the id, so when this function is called you will get the id back
-    return id
+    return str(id)
 
 @app.route("/quiz/<speed>/<id>")
 def quiz(speed, id):
