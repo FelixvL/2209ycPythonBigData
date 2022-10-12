@@ -13,7 +13,9 @@
       var y = document.getElementById("email").value;
       var z = document.getElementById("password").value;
       var d = localStorage.getItem("code")
-      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+y+"/"+z+"/"+d)}
+      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+y+"/"+z)
+      paginahome()
+    }
 
       function paginahome(){
       onclick=window.location.href='home-f.html';}
@@ -307,7 +309,7 @@
           </select><br><br>
         <input class="labelset" type="text" placeholder="Email" id="email"><br><br>
         <input class="labelset" type="password" placeholder="Password" id="password"><br><br>
-        <input type="button" onclick="paginahome(); fitslabels();" class="startbutton startbutton:hover" value="Join">
+        <input type="button" onclick="fitslabels();" class="startbutton startbutton:hover" value="Join">
       </div><br><br><br><br>
   </body>
 </html>

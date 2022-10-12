@@ -177,12 +177,15 @@ analyticalaptitude_mid = ['Boxing', 'Gymnastics', 'Skiing: Alpine', 'Water Polo'
 analyticalaptitude_pro = ['Ice Hockey', 'Football', 'Basketball', 'Wrestling', 'Martial Arts', 'Tennis', 'Baseball/Softball', 'Soccer', 'Lacrosse', 'Field Hockey', 'Racquetball/Squash', 'Fencing', 'Auto Racing', 'Horse Racing', 'Golf']
 
 
-# # Get row from specific ID
-# SELECT * FROM users WHERE ID = (value from localstorage)
-# # Put the row in a varaible to use later on
-# skill_values_user = {id:3, name:"test", age:30, flexibility:mid, power:pro}
+# @app.route("/home/<id>")
+# def home(id):
+#     mycursor = db.cursor(buffered=True)
+#     mycursor.execute("SELECT endurance,strength,power,speed,agility,flexibility,nerve,durability,handeyecoordination,analyticalaptitude FROM users WHERE ID = '%s'"%(id))
+#     testing = mycursor.fetchone()
+#     db.commit()
+#     print(testing)
+#     return "rij_gebruiker"
 
-# function to put skill lijst in go through
 def waarde_bepalen(z):
     total_list_user = []
     skill_lijst_lp = ["endurance", "strength", "power", "speed", "agility", "flexibility", "nerve", "durability", "handeyecoordination", "analyticalaptitude"]
