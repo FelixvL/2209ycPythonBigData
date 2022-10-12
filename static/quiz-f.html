@@ -7,12 +7,12 @@
   </head>
   <script>
     function set_question() {
-      id = localStorage.getItem("question");
-      // if all questions have been asked go to results page
-      if (id == 10) {
+      qid = localStorage.getItem("question");
+      // if all questions have been answered go to results page
+      if (qid == 11) {
         onclick=window.location.href='fits-f.html';
       } else {
-        fetch("http://127.0.0.1:5000/quiz/"+id)
+        fetch("http://127.0.0.1:5000/quiz/"+qid)
         .then(res => res.text()).then(data => {
           question = data
           split_question = question.split(';');
@@ -20,21 +20,11 @@
           document.getElementById("a").innerHTML = split_question[2];
           document.getElementById("b").innerHTML = split_question[3];
           document.getElementById("c").innerHTML = split_question[4];
-          localStorage.setItem("question", parseInt(id) + 1);
-      });
+          localStorage.setItem("question", parseInt(qid) + 1);
+        });
       }
-      // keep counter options
-      // set a local storage counter 
     }
 
-    // function speed(){
-    //   var x = document.getElementById("less").value;
-    //   fetch("http://127.0.0.1:5000/quiz/"+x)
-    //   var y = document.getElementById("mid").value;
-    //   fetch("http://127.0.0.1:5000/quiz/"+y)
-    //   var z = document.getElementById("more").value;
-    //   fetch("http://127.0.0.1:5000/quiz/"+z)
-    // }
     function paginafits(){
       onclick=window.location.href='fits-f.html';
     }
