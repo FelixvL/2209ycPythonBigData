@@ -49,11 +49,14 @@ def intro(vnaam,age):
 def quiz(speed, id):
     mycursor.execute("UPDATE users SET speed = '%s' WHERE ID = '%s'" % (speed, id))
     db.commit()
-    print(speed, "added")
+    print(speed, "added!")
     return "beantwoord speed"
 
-@app.route("/fits")
-def fits():
+@app.route("/fits/<country>/<education>/<job>/<email>/<password>/<data>")
+def fits(country, education, job, email, password, data):
+    mycursor.execute("INSERT INTO users (country, education, job, email, password) VALUES ('%s', '%s','%s','%s','%s') WHERE id = '%s''" % (country, education, job, email, password, data))
+    db.commit()
+    print("fits added!")
     return 'fits.html'
 
 @app.route("/home")
