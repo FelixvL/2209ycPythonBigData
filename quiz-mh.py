@@ -19,7 +19,7 @@ questions_string = {
 # c) Carrying the couches and fridge
 
 questions_string = {
-    1: "strength;You are helping your friends with moving to their new appartment. What kind of stuff would you prefer to carry?;\
+    2: "strength;You are helping your friends with moving to their new appartment. What kind of stuff would you prefer to carry?;\
         The plants and other light stuff;The heavier moving Boxes;Carrying the couches and fridge"
 }
 
@@ -30,7 +30,7 @@ questions_string = {
 # c) Getting all the big prices
 
 questions_string = {
-    1: "power;You are at a theme park where you can win prizes by shooting or throwing the ball really hard. How many prices could you win?;\
+    3: "power;You are at a theme park where you can win prizes by shooting or throwing the ball really hard. How many prices could you win?;\
         Participating is more important than winning;Winning the small prices;Getting all the big prices"
 }
 
@@ -186,16 +186,16 @@ analyticalaptitude_pro = ['Ice Hockey', 'Football', 'Basketball', 'Wrestling', '
 #     print(testing)
 #     return "rij_gebruiker"
 
-def waarde_bepalen(z):
+def waarde_bepalen(sportdict):
     total_list_user = []
     skill_lijst_lp = ["endurance", "strength", "power", "speed", "agility", "flexibility", "nerve", "durability", "handeyecoordination", "analyticalaptitude"]
     #getting key and value from the dict   
-    for x, y in z.items():
+    for key, value in sportdict.items():
         #looping through skill lijst lp
         for skill in skill_lijst_lp:
             #If in skilllist put key and value together and get the function with the same name as string.
-            if x == skill:
-                skill_list = x + "_" + y
+            if key == skill:
+                skill_list = key + "_" + value
                 #put predifined list into list of user
                 total_list_user.append(globals()[skill_list])        
             else:
@@ -217,6 +217,6 @@ def waarde_bepalen(z):
    
     return top_3_sports
 
-testdict = {"endurance":"mid", "strength":"mid", "power":"beg", "speed":"mid", "agility":"mid", "flexibility":"pro", "nerve":"beg", "durability":"mid", "handeyecoordination":"mid", "analyticalaptitude":"pro"}
+testdict = {"endurance":"pro", "strength":"pro", "power":"beg", "speed":"mid", "agility":"mid", "flexibility":"pro", "nerve":"beg", "durability":"mid", "handeyecoordination":"mid", "analyticalaptitude":"pro"}
 waarde_bepalen(testdict)
 

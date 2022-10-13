@@ -1,6 +1,6 @@
 
 h1 {
-    color: #886cab;
+    color: #6c7eab;
     font-family:Verdana;
     text-align: center;
     padding: 10px;}
@@ -11,7 +11,7 @@ p {
     font-size: 14px;}
 
 h1.left {
-    color: #886cab;
+    color: #6c7eab;
     font-family:Verdana;
     text-align: left;
     padding: 10px;}
@@ -39,8 +39,8 @@ h1.left {
 
 .button {
     background-color: white;
-    border: 3px solid #886cab;
-    color: #886cab;
+    border: 3px solid #6c7eab;
+    color: #6c7eab;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -51,7 +51,7 @@ h1.left {
     cursor: pointer;}
 
 .button:hover {
-    background-color: #886cab;
+    background-color: #6c79ab;
     color: white;}
 
 .blocktext {
@@ -77,8 +77,8 @@ h1.left {
 
 .labelset {
     background-color: white;
-    border: 2px solid #886cab;
-    color: #886cab;
+    border: 2px solid #6c7eab;
+    color: #6c7eab;
     padding: 8px 57px;
     text-align: center;
     text-decoration: none;
@@ -88,8 +88,8 @@ h1.left {
 
 
 .startbutton {
-    background-color: #886cab;
-    border: 3px solid #886cab;
+    background-color: #6c7eab;
+    border: 3px solid #6c7eab;
     color: white;
     padding: 8px 123px;
     text-align: center;
@@ -101,7 +101,7 @@ h1.left {
     cursor: pointer;}
  
 .startbutton:hover {
-    background-color: #5c4577;
+    background-color: #6c79ab;
     color: white;}
 
 .aboutpart {
@@ -134,11 +134,11 @@ h1.left {
 
     .dropbtn {
         background-color: white;
-        color: #886cab;
+        color: #6c7eab;
         padding: 8px 57px;
         font-size: 16px;
         text-align: center;
-        border: 2px solid #886cab;
+        border: 2px solid #6c7eab;
         margin: 4px 2px;
         min-width: 286px;
         max-width: 286px;
@@ -153,7 +153,7 @@ h1.left {
       .dropdown-content {
         display: none;
         position: absolute;
-        background-color: #886cab;
+        background-color: #6c7eab;
         color: white;
         min-width: 286px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -162,7 +162,7 @@ h1.left {
     
       
       .dropdown-content :hover {
-        background-color: #5a4376;
+        background-color: #6c7eab;
         color: white;
     }
       
@@ -171,6 +171,6 @@ h1.left {
       }
       
       .dropdown:hover .dropbtn {
-        background-color: #886cab;
+        background-color: #6c7eab;
         color: white;
       }
