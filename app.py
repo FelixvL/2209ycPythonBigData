@@ -26,15 +26,15 @@ mycursor = db.cursor()
 # The function intro() will create a new item in the database with the parameters given in the URL
 # The function will return the id of the newly created user
 # So when the URL is called, an id will be returned
-@app.route("/intro/<vnaam>/<age>")
-def intro(vnaam,age):
+@app.route("/intro/<vnaam>/<gender>/<age>")
+def intro(vnaam,gender,age):
     # create new item in database, assign values name and age
-    mycursor.execute("INSERT INTO users (name, age) VALUES ('%s', '%s')" % (vnaam, age))
+    mycursor.execute("INSERT INTO users (name, gender, age) VALUES ('%s', '%s', '%s')" % (vnaam, gender, age))
     db.commit()
     # get corresponding id of new user from the database and assign it to variable id
     mycursor.execute("SELECT MAX(ID) FROM users")
     id = mycursor.fetchone()[0]
-    print(id, vnaam, age, "added")
+    print(id, vnaam, gender, age, "added")
     # let this function return the id, so when this function is called you will get the id back
     return str(id)
 
@@ -111,16 +111,17 @@ def generated(id):
         sport2 = "".join(top_3_sports[1][0])
         sport3 = "".join(top_3_sports[2][0])
 
-        print("1.", sport1)
-        print("2.", sport2)
-        print("3.", sport3)
-        print(top_10_sports)
+        top_3_user = sport1 + ", " + sport2 + ", " + sport3
+        # print("1.", sport1)
+        # print("2.", sport2)
+        # print("3.", sport3)
+        # print(top_10_sports)
 
-        return "top_3_sports"
+        return top_3_user
 
-    waarde_bepalen(value_user)
-
-    return "rij_gebruiker"
+    top_3_user = waarde_bepalen(value_user)
+    print(top_3_user)
+    return str(top_3_user)
 
 
 

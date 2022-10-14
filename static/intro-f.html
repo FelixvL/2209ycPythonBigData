@@ -13,10 +13,11 @@
     function vnaam(){
       // Get name and age elements from the html and assign them to x and y
       var x = document.getElementById("vnaam").value;
-      var y = document.getElementById("age").value;
+      var y = document.getElementById("gender").value;
+      var z = document.getElementById("age").value;
       // Call the URL that goes to the function intro() in python and give name and age as arguments in the url
       // We should probably change this to a relative path if that's possible?
-      fetch("http://127.0.0.1:5000/intro/"+x+"/"+y)
+      fetch("http://127.0.0.1:5000/intro/"+x+"/"+y+"/"+z)
       // The then method will save the return value of intro() (the id) in the variable 'data'
       .then(res => res.text()).then(data => {
         // Here we set a new item in local storage
@@ -24,7 +25,7 @@
         // The key is set to 'code' and the value is data (which is the id, the result of calling intro())
         console.log("test" + data);
         localStorage.setItem("id", data);
-        localStorage.setItem("question", 2)
+        localStorage.setItem("question", 2);
         paginaquiz1();
       })
     }
@@ -50,29 +51,24 @@
     </div>
     <div>
         <div class="centreren">
-            <br><h1>Introduction</h1>
-            <p>You will get to see questions about different skills. <br>
-              Your task is to choose for the option that fits you the most.<br><br>
-              Before you start, fill in your name and age. </p>
+            <br><h1>Nice that you want to do the skill quiz!</h1>
+            <p>Advice without charge and a sport based on<br>
+               your situation within 2 minutes<br><br>
+              We would like to know you a little better before you start.
+            </p>
         </div>
             <div class="centreren">
               <br>
                     <input class="labelset" type="text" placeholder="Name" value="" id="vnaam"><br><br>
-                    <input class="labelset" type="number" required maxlength="3" placeholder="Age" id="age"><br><br>
+                    <select class="dropbtn" type="text" id="Gender">
+                      <option value="" disabled selected>Gender</option>
+                      <option value="woman">Woman</option>
+                      <option value="man">Man</option>
+                      <option value="other">Other</option>
+                    </select><br><br>
+                    <input class="labelset" type="number" required placeholder="Age" id="age"><br><br>
                     <input type="button" onclick="vnaam()" class="startbutton startbutton:hover" value="Start">
             </div>
           </div>
   </body>
 </html>
-
-<!-- function g(){
-fetch('http://nos.nl/alleberichten')
-.then(res=> res.json())
-.then(data => anderefunctie(data.id))
-}
-
-function anderefunctie(hetid){
-  localStorage.setItem("hoi", hetid)
-}
-
-<input type="button" onclick="setlocalid(); getlocalid()" class="startbutton startbutton:hover" value="test"> -->
