@@ -78,4 +78,3 @@ def quiz(qid):
 
     data = questions_string[qid]
     return str(data)
-
