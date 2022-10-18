@@ -12,15 +12,14 @@
       var x = document.getElementById("job").value;
       var y = document.getElementById("email").value;
       var z = document.getElementById("password").value;
-      var d = localStorage.getItem("id")
+      var d = localStorage.getItem("id");
       console.log("hoi")
-      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+y+"/"+z)
+      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+y+"/"+z+"/"+d)
       paginahome()
     }
     function begin(){
       console.log("ab")
       var d = localStorage.getItem("id")
-      d = 77
       var url = "http://127.0.0.1:5000/fits/"+d;
       console.log("cd")
       console.log(url)
