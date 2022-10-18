@@ -40,6 +40,36 @@ def intro(vnaam,gender,age):
 
 
 
+
+@app.route("/quiz/<qid>")
+def quiz(qid):
+    
+    questions_string = {
+        "1": "endurance;Your friends asks you if you\'d like to sign up for a charity run with them. What do you say?;\
+            You\'ll cheer them on from the sidelines.;If it\'s no more than 5 km, you\'ll consider it.;Absolutely!",
+        "2": "strength;You are helping your friends with moving to their new appartment. What kind of stuff would you prefer to carry?;\
+            The plants and other light stuff;The heavier moving Boxes;Carrying the couches and fridge",
+        "3": "power;You are at a theme park where you can win prizes by shooting or throwing the ball really hard. How many prices could you win?;\
+            Participating is more important than winning;Winning the small prices;Getting all the big prices",
+        "4": "speed;If you would descripe your speed in the form of animals, which animal would you been?;\
+            A Tortoise;A rabbit;A cheetah",
+        "5": "agility;If we refer to the movement of your body, how would you describe it?;\
+            I don't move easily and I am not quick;I move easily but I am not really quick;I move easy and quick",
+        "6": "flexibility;If you were to take a yoga class, what would it look like?;\
+            Nope;Doing alright;Master",
+        "7": "nerve;How do you feel about adrenaline sports?;\
+            Nope nope nope;Rollercoasters are fine but skydiving is a bit much;Skydiving is my biggest dream",
+        "8": "durability;You are at a concert and see people doing the slamdance. Are you joining the moshpit?;\
+            I am staying as far as possible;I join it a bit on the edge;I would like to join in the center",
+        "9": "hand-eye coordination;When someone throws you a ball, you are confident you'll catch it.;\
+            Nervous, you're not usually good at catching things;Focused, you'll probably catch it if you pay attention;Yes!",
+        "10": "analytical aptitude;Are you comfortable with making fast important decissions under pressure for yourself or a group?;\
+            I am bad at making fast descissions under pressure;I am oke with it if it's at least for my own businesses;I can take the pressure and do what is the best for myself and the group"
+    }
+
+    data = questions_string[qid]
+    return str(data)
+    
 @app.route("/fits/<id>")
 def generated(id):
     mycursor = db.cursor(buffered=True)
@@ -125,6 +155,7 @@ def generated(id):
 
 
 
+
 @app.route("/fits/<country>/<education>/<job>/<email>/<password>")
 def fits(country, education, job, email, password):
     mycursor.execute("UPDATE users SET country = '%s', education = '%s', job = '%s', email = '%s', password = '%s' WHERE ID = %s" % (country, education, job, email, password, 78))
@@ -137,35 +168,3 @@ def fits(country, education, job, email, password):
 @app.route("/home")
 def home():
     return 'home.html'
-
-
-
-@app.route("/quiz/<qid>")
-def quiz(qid):
-    
-    questions_string = {
-        "1": "endurance;Your friends asks you if you\'d like to sign up for a charity run with them. What do you say?;\
-            You\'ll cheer them on from the sidelines.;If it\'s no more than 5 km, you\'ll consider it.;Absolutely!",
-        "2": "strength;You are helping your friends with moving to their new appartment. What kind of stuff would you prefer to carry?;\
-            The plants and other light stuff;The heavier moving Boxes;Carrying the couches and fridge",
-        "3": "power;You are at a theme park where you can win prizes by shooting or throwing the ball really hard. How many prices could you win?;\
-            Participating is more important than winning;Winning the small prices;Getting all the big prices",
-        "4": "speed;If you would descripe your speed in the form of animals, which animal would you been?;\
-            A Tortoise;A rabbit;A cheetah",
-        "5": "agility;If we refer to the movement of your body, how would you describe it?;\
-            I don't move easily and I am not quick;I move easily but I am not really quick;I move easy and quick",
-        "6": "flexibility;If you were to take a yoga class, what would it look like?;\
-            Nope;Doing alright;Master",
-        "7": "nerve;How do you feel about adrenaline sports?;\
-            Nope nope nope;Rollercoasters are fine but skydiving is a bit much;Skydiving is my biggest dream",
-        "8": "durability;How do you feel about adrenaline sports?;\
-            Nope nope nope;Rollercoasters are fine but skydiving is a bit much;Skydiving is my biggest dream",
-        "9": "hand-eye coordination;When someone throws you a ball, you are confident you'll catch it.;\
-            Nervous, you're not usually good at catching things;Focused, you'll probably catch it if you pay attention;Yes!",
-        "10": "analytical aptitude;Are you comfortable with making fast important decissions under pressure for yourself or a group?;\
-            I am bad at making fast descissions under pressure;I am oke with it if it's at least for my own businesses;I can take the pressure and do what is the best for myself and the group"
-    }
-
-    data = questions_string[qid]
-    return str(data)
-    
