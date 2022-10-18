@@ -168,4 +168,24 @@ def quiz(qid):
 
     data = questions_string[qid]
     return str(data)
-    
+
+
+@app.route("/answer/<id>/<skill>/<value>")
+def answer(uid, skill, value):
+    skills_no = {
+        1: "endurance",
+        2: "strength",
+        3: "power",
+        4: "speed",
+        5: "flexibility",
+        6: "agility",
+        7: "nerve",
+        8: "durability",
+        9: "hand_eye_co",
+        10: "analytical_appr"
+    }
+    skill_str = skills_no[skill]
+    mycursor.execute("UPDATE skills SET %s = '%s' WHERE ID = %s" % (skill_str, value, uid))
+    db.commit()
+    print("User %s has level %s for skill %s" % (uid, value, skill_str))
+    return uid
