@@ -26,23 +26,23 @@
     }
 
     function store_answer_a() {
-      skill = localStorage.getItem("question") - 1;
-      id = localStorage.getItem("id");
-      fetch("http://127.0.0.1:5000/answer/" + id + "/" + skill + "/" + "beg");
+      let skill = localStorage.getItem("question") - 1;
+      let id = localStorage.getItem("id");
+      fetch("http://127.0.0.1:5000/answer/" + id + "/" + skill + "/" + 1)
       set_question();
     }
 
     function store_answer_b() {
       skill = localStorage.getItem("question") - 1;
       id = localStorage.getItem("id");
-      fetch("http://127.0.0.1:5000/answer/" + id + "/" + skill + "/" + "mid");
+      fetch("http://127.0.0.1:5000/answer/" + id + "/" + skill + "/" + 2);
       set_question();
     }
 
     function store_answer_c() {
       skill = localStorage.getItem("question") - 1;
       id = localStorage.getItem("id");
-      fetch("http://127.0.0.1:5000/answer/" + id + "/" +skill + "/" + "pro");
+      fetch("http://127.0.0.1:5000/answer/" + id + "/" +skill + "/" + 3);
       set_question();
     }
 
