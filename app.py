@@ -2,11 +2,14 @@ from flask import Flask
 import mysql.connector
 from flask_cors import CORS, cross_origin
 import collections
+from logging import FileHandler,WARNING
 
 
 app = Flask(__name__)
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+file_handler = FileHandler('errorlog.txt')
+file_handler.setLevel(WARNING)
 
 db = mysql.connector.connect(
     host = "bigdata-database.mysql.database.azure.com",
@@ -172,6 +175,7 @@ def quiz(qid):
 
 @app.route("/answer/<uid>/<skill>/<value>")
 def answer(uid, skill, value):
+    print("we're here")
     skills_no = {
         1: "endurance",
         2: "strength",
@@ -184,8 +188,14 @@ def answer(uid, skill, value):
         9: "handeyecoordination",
         10: "analyticalaptitude"
     }
-    skill_str = skills_no[skill]
-    mycursor.execute("UPDATE users SET %s = '%s' WHERE ID = %s" % (skill_str, value, uid))
+
+    value_no = {
+        1: "beg",
+        2: "mid",
+        3: "pro"
+    }
+    skill_str = skills_no[int(skill)]
+    mycursor.execute("UPDATE users SET %s = '%s' WHERE ID = %s" % (skill_str, value_no[int(value)], uid))
     db.commit()
     print("User %s has level %s for skill %s" % (uid, value, skill_str))
     return uid
