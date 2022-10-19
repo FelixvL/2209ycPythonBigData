@@ -1,9 +1,14 @@
+@media only screen and (min-device-width: 480px){}
 
 h1 {
     color: #4A8994;
     font-family:Verdana;
     text-align: center;
     padding: 10px;}
+
+a {
+    font-family:Verdana;
+}
 
 p {
     color: rgb(54, 53, 53);
@@ -17,13 +22,25 @@ h1.left {
     padding: 10px;}
 
 .right_style {
-    float:right;
+    float: right;
+    color: rgb(96, 96, 96); 
+    background-color: transparent; 
+    text-decoration: none;}
+
+.left_style {
+    float: left;
     color: rgb(96, 96, 96); 
     background-color: transparent; 
     text-decoration: none;}
 
 .centreren{
     text-align: center;}
+
+.centrerenquiz{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);}
 
 .navbar_colour{
     position: sticky;
@@ -35,7 +52,9 @@ h1.left {
 
 .nav_button {
     color: rgb(96, 96, 96);
-    font-size: 20px; 
+    font-size: 20px;
+    display: inline-block;
+    text-align: center;
     background-color: transparent; 
     text-decoration: none;}
 
@@ -56,28 +75,11 @@ h1.left {
     background-color: #4A8994;
     color: white;}
 
-.buttonnext {
-    background-color: white;
-    border: 2px solid #4A8994;
-    color: #4A8994;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;}
-
-.buttonnext:hover {
-    background-color: #4A8994;
-    color: white;}
-
 .blocktext {
     margin-left: auto;
     margin-right: auto;
     text-align:justify;
-    width: 33em;}
+    width: 18em;}
 
 .footer {
     position: fixed;

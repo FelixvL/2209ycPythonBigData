@@ -26,7 +26,7 @@
       fetch(url)
       .then(r => r.text())
       .then(d => {
-      var sport = d.split(",")
+      var sport = d.split(";")
       var sport1 = document.getElementById("sport1").innerHTML=sport[0]
       var sport2 = document.getElementById("sport2").innerHTML=sport[1]
       var sport3 = document.getElementById("sport3").innerHTML=sport[2]})
@@ -36,6 +36,7 @@
       onclick=window.location.href='index-f.html';}
   </script>
   <body onload="begin()">
+
     <div class="navbar_colour">
     <nav>
       <a style="font-family:Verdana" href="index-f.html" class="nav_button"><b>SkillAPP</b></a>
@@ -43,23 +44,27 @@
     </nav>
     <hr>
     </div>
+
     <div class="centreren">
-        <br><h1 id="sport1" style="font-family:Verdana">*Generated sport*</h1><br>
-      </div>
-        <div class="blocktext">
-            <p>Is the sport that fits you the best. You have the perfect skills to become a pro in this categorie. Keep improving this skills and work hard on it. Your top 3 sports are:
-            <ol>
-              <li id="sport1">sport1</li>
-              <li id="sport2">sport2</li>
-              <li id="sport3">sport3</li>
-            </ol>
-              It is proven that working together towards goals makes it easier to acomplish them. We offer you a platform where you can work towards your goals together with other people in the same direction.
-              We help you through this process with theoritical and practical guidance to get the best out of you!
-            </p><br>
-            </div>
-          <div class="centreren">
-            <p>Make an account to join the community!</p><br>
-          </div>
+      <br><h1 id="sport1">*Generated sport*</h1><br>
+    </div>
+
+    <div class="blocktext">
+          <p>Is the sport that fits you the best. You have the perfect skills to become a pro in this categorie. Keep improving this skills and work hard on it. Your top 3 sports are:
+          <ol>
+            <li id="sport1">sport1</li>
+            <li id="sport2">sport2</li>
+            <li id="sport3">sport3</li>
+          </ol>
+            It is proven that working together towards goals makes it easier to acomplish them. We offer you a platform where you can work towards your goals together with other people in the same direction.
+            We help you through this process with theoritical and practical guidance to get the best out of you!
+          </p><br>
+    </div>
+
+    <div class="centreren">
+          <p>Make an account to join the community!</p><br>
+    </div>
+
     <div class="centreren">
       <select class="dropbtn" type="'text" id="country">
         <option>Select Country</option>
@@ -315,21 +320,22 @@
         <option value="YE">Yemen</option>
         <option value="ZM">Zambia</option>
         <option value="ZW">Zimbabwe</option>
-    </select><br><br>
-        <select class="dropbtn" type="text" id="education">
+      </select><br><br>
+      <select class="dropbtn" type="text" id="education">
           <option value="" disabled selected>Education</option>
           <option value="phyisical">No Education</option>
           <option value="mental">High School</option>
           <option value="mental">University</option>
-        </select><br><br>
-          <select class="dropbtn" type="text" id="job">
-            <option value="" disabled selected>Type of Job</option>
-            <option value="phyisical">Phyisical</option>
-            <option value="mental">Mental</option>
-          </select><br><br>
-        <input class="labelset" type="text" placeholder="Email" id="email"><br><br>
-        <input class="labelset" type="password" placeholder="Password" id="password"><br><br>
-        <input type="button" onclick="fitslabels();" class="startbutton startbutton:hover" value="Join">
-      </div><br><br><br><br>
+      </select><br><br>
+      <select class="dropbtn" type="text" id="job">
+        <option value="" disabled selected>Type of Job</option>
+        <option value="phyisical">Phyisical</option>
+        <option value="mental">Mental</option>
+      </select><br><br>
+      <input class="labelset" type="text" placeholder="Email" id="email"><br><br>
+      <input class="labelset" type="password" placeholder="Password" id="password"><br><br>
+      <input type="button" onclick="fitslabels();" class="startbutton startbutton:hover" value="Join">
+    </div><br><br><br><br>
+
   </body>
 </html>
