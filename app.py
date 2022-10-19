@@ -113,7 +113,7 @@ def generated(id):
         sport2 = "".join(top_3_sports[1][0])
         sport3 = "".join(top_3_sports[2][0])
 
-        top_3_user = sport1 + ", " + sport2 + ", " + sport3
+        top_3_user = sport1 + "; " + sport2 + "; " + sport3
         # print("1.", sport1)
         # print("2.", sport2)
         # print("3.", sport3)
