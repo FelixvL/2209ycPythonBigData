@@ -1,6 +1,6 @@
 
 h1 {
-    color: #6c7eab;
+    color: #4A8994;
     font-family:Verdana;
     text-align: center;
     padding: 10px;}
@@ -11,7 +11,7 @@ p {
     font-size: 14px;}
 
 h1.left {
-    color: #6c7eab;
+    color: #4A8994;
     font-family:Verdana;
     text-align: left;
     padding: 10px;}
@@ -41,8 +41,8 @@ h1.left {
 
 .button {
     background-color: white;
-    border: 3px solid #6c7eab;
-    color: #6c7eab;
+    border: 3px solid #4A8994;
+    color: #4A8994;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
@@ -53,7 +53,24 @@ h1.left {
     cursor: pointer;}
 
 .button:hover {
-    background-color: #6c7eab;
+    background-color: #4A8994;
+    color: white;}
+
+.buttonnext {
+    background-color: white;
+    border: 2px solid #4A8994;
+    color: #4A8994;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;}
+
+.buttonnext:hover {
+    background-color: #4A8994;
     color: white;}
 
 .blocktext {
@@ -61,7 +78,6 @@ h1.left {
     margin-right: auto;
     text-align:justify;
     width: 33em;}
-
 
 .footer {
     position: fixed;
@@ -75,12 +91,10 @@ h1.left {
     padding: 3px;
     font-size: 5px;}
 
-
-
 .labelset {
     background-color: white;
-    border: 2px solid #6c7eab;
-    color: #6c7eab;
+    border: 2px solid #4A8994;
+    color: #4A8994;
     padding: 8px 57px;
     text-align: center;
     text-decoration: none;
@@ -91,8 +105,8 @@ h1.left {
 
 .startbutton {
     background-color: white;
-    border: 3px solid #6c7eab;
-    color: #6c7eab;
+    border: 3px solid #4A8994;
+    color: #4A8994;
     padding: 8px 123px;
     text-align: center;
     text-decoration: none;
@@ -103,7 +117,7 @@ h1.left {
     cursor: pointer;}
  
 .startbutton:hover {
-    background-color: #6c7eab;
+    background-color: #4A8994;
     color: white;}
 
 .aboutpart {
@@ -134,45 +148,45 @@ h1.left {
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);}
 
-    .dropbtn {
-        background-color: white;
-        color: #6c7eab;
-        padding: 8px 57px;
-        font-size: 16px;
-        text-align: center;
-        border: 2px solid #6c7eab;
-        margin: 4px 2px;
-        min-width: 286px;
-        max-width: 286px;
-        cursor: pointer;
-      }
-      
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-      
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #6c7eab;
-        color: white;
-        min-width: 286px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-      }
-    
-      
-      .dropdown-content :hover {
-        background-color: #6c7eab;
-        color: white;
+.dropbtn {
+    background-color: white;
+    color: #4A8994;
+    padding: 8px 57px;
+    font-size: 16px;
+    text-align: center;
+    border: 2px solid #4A8994;
+    margin: 4px 2px;
+    min-width: 286px;
+    max-width: 286px;
+    cursor: pointer;
     }
       
-      .dropdown:hover .dropdown-content {
-        display: block;
-      }
+.dropdown {
+    position: relative;
+    display: inline-block;
+    }
       
-      .dropdown:hover .dropbtn {
-        background-color: #6c7eab;
-        color: white;
-      }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4A8994;
+    color: white;
+    min-width: 286px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    }
+    
+.dropdown-content :hover {
+    background-color: #4A8994;
+    color: white;
+    }
+      
+.dropdown:hover .dropdown-content {
+    display: block;
+    }
+      
+.dropdown:hover .dropbtn {
+    background-color: #4A8994;
+    color: white;
+    }
+

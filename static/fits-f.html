@@ -25,17 +25,15 @@
       console.log(url)
       fetch(url)
       .then(r => r.text())
-      .then(d => document.getElementById("generated").innerHTML=d)
+      .then(d => {
+      var sport = d.split(",")
+      var sport1 = document.getElementById("sport1").innerHTML=sport[0]
+      var sport2 = document.getElementById("sport2").innerHTML=sport[1]
+      var sport3 = document.getElementById("sport3").innerHTML=sport[2]})
     }
 
-    // function opslitsen(){
-    //   let text = d
-    //   const MyArray = d.split(",")
-    //   document.getElementById("top1").innerHTML = MyArray[0]
-    // }
-
       function paginahome(){
-      onclick=window.location.href='home-f.html';}
+      onclick=window.location.href='index-f.html';}
   </script>
   <body onload="begin()">
     <div class="navbar_colour">
@@ -46,10 +44,15 @@
     <hr>
     </div>
     <div class="centreren">
-        <br><h1 id="top1" style="font-family:Verdana">*Generated sport*</h1><br>
+        <br><h1 id="sport1" style="font-family:Verdana">*Generated sport*</h1><br>
       </div>
         <div class="blocktext">
-            <p>*Generated sport* is the sport that fits you the best. You have the perfect skills to become a pro in this categorie. Keep improving this skills and work hard on it.
+            <p>Is the sport that fits you the best. You have the perfect skills to become a pro in this categorie. Keep improving this skills and work hard on it. Your top 3 sports are:
+            <ol>
+              <li id="sport1">sport1</li>
+              <li id="sport2">sport2</li>
+              <li id="sport3">sport3</li>
+            </ol>
               It is proven that working together towards goals makes it easier to acomplish them. We offer you a platform where you can work towards your goals together with other people in the same direction.
               We help you through this process with theoritical and practical guidance to get the best out of you!
             </p><br>
