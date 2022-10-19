@@ -36,11 +36,11 @@ h1.left {
 .centreren{
     text-align: center;}
 
-.centrerenquiz{
-    position: fixed;
+.centrerenver{
+    margin: 0;
+    position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);}
+    transform: translateY(-50%);}
 
 .navbar_colour{
     position: sticky;
