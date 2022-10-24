@@ -10,11 +10,9 @@
       var v = document.getElementById("country").value;
       var w = document.getElementById("education").value;
       var x = document.getElementById("job").value;
-      var y = document.getElementById("email").value;
-      var z = document.getElementById("password").value;
       var d = localStorage.getItem("id");
       console.log("hoi")
-      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+y+"/"+z+"/"+d)
+      fetch("http://127.0.0.1:5000/fits/"+v+"/"+w+"/"+x+"/"+d)
       paginahome()
     }
     function begin(){
@@ -52,7 +50,7 @@
     </div>
 
     <div class="blocktext">
-          <p>Is the sport that fits you the best. You have the perfect skills to become a pro in this categorie. Keep improving this skills and work hard on it. Your top 3 sports are:
+          <p>Is the sport that fits you the best. You have the perfect skills to become a pro in this category. Keep improving this skills and work hard on it. Your top 3 sports are:
           <ol>
             <li id="sport1">sport1</li>
             <li id="sport2">sport2</li>
